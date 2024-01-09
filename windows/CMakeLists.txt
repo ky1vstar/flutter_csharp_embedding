@@ -1,6 +1,6 @@
 # Project-level configuration.
-cmake_minimum_required(VERSION 3.14)
-project(platform_channel LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.23)
+project(platform_channel LANGUAGES CSharp CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
@@ -8,7 +8,7 @@ set(BINARY_NAME "platform_channel")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.
-cmake_policy(VERSION 3.14...3.25)
+cmake_policy(VERSION 3.23...3.25)
 
 # Define build configuration option.
 get_property(IS_MULTICONFIG GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
@@ -55,6 +55,9 @@ add_subdirectory("runner")
 # Generated plugin build rules, which manage building the plugins and adding
 # them to the application.
 include(flutter/generated_plugins.cmake)
+
+# Flutter C# glue build.
+add_subdirectory("csharp_glue")
 
 
 # === Installation ===

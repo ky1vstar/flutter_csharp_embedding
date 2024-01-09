@@ -1,0 +1,19 @@
+using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Windows;
+
+[assembly: AssemblyTitle("platform_channel")]
+[assembly: AssemblyDescription("platform_channel")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("io.flutter.examples")]
+[assembly: AssemblyProduct("platform_channel")]
+[assembly: AssemblyCopyright("Copyright (C) 2022 io.flutter.examples. All rights reserved.")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion("@FLUTTER_VERSION_MAJOR@.@FLUTTER_VERSION_MINOR@.@FLUTTER_VERSION_PATCH@.@FLUTTER_VERSION_BUILD@")]
+[assembly: AssemblyFileVersion("@FLUTTER_VERSION_MAJOR@.@FLUTTER_VERSION_MINOR@.@FLUTTER_VERSION_PATCH@.@FLUTTER_VERSION_BUILD@")]
+
+[assembly: ComVisible(false)]
+[assembly: NeutralResourcesLanguage("en-US")]
