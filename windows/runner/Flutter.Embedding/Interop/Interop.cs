@@ -155,7 +155,8 @@ namespace Flutter.Embedding
 
     #region flutter_csharp_glue.h
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate IntPtr CSharpGlueRegisterPluginsCallback(
+    [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(FlutterDesktopPluginRegistrar.Marshaler))]
+    public delegate FlutterDesktopPluginRegistrar CSharpGlueRegisterPluginsCallback(
       [MarshalAs(UnmanagedType.LPStr)] string plugin_name);
 
     [DllImport("flutter_csharp_glue.dll")]

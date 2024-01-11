@@ -37,7 +37,7 @@ namespace Flutter.Embedding.Win32
       {
         return false;
       }
-      Interop.CSharpGlueRegisterPlugins((pluginName) => FlutterController.Engine.GetRegistrarForPlugin(pluginName).DangerousGetHandle());
+      GeneratedPluginRegistrant.RegisterPlugins(FlutterController.Engine);
       SetChildContent(FlutterController.View.GetNativeWindow());
       return true;
     }

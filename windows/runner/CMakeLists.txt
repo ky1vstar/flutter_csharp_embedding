@@ -18,7 +18,6 @@ add_executable(${BINARY_NAME}
   Flutter.Embedding/FlutterException.cs
   Flutter.Embedding/FlutterView.cs
   Flutter.Embedding/FlutterViewController.cs
-  Flutter.Embedding/IPluginRegistry.cs
   Flutter.Embedding/MissingPluginException.cs
   Flutter.Embedding/Channels/BasicMessageChannel.cs
   Flutter.Embedding/Channels/BinaryCodec.cs
@@ -46,6 +45,9 @@ add_executable(${BINARY_NAME}
   Flutter.Embedding/Interop/FlutterDesktopView.cs
   Flutter.Embedding/Interop/FlutterDesktopViewController.cs
   Flutter.Embedding/Interop/Interop.cs
+  Flutter.Embedding/Plugins/FlutterPluginRegistrar.cs
+  Flutter.Embedding/Plugins/GeneratedPluginRegistrant.cs
+  Flutter.Embedding/Plugins/IPluginRegistry.cs
   Flutter.Embedding/Win32/FlutterWindow.cs
   Flutter.Embedding/Win32/Win32Window.cs
   Flutter.Embedding/Win32/Windows.Win32.NativeMethods.g.cs
@@ -63,6 +65,8 @@ target_compile_options(${BINARY_NAME} PUBLIC "/unsafe")
 
 # Disable implicit assembly generation that collide with our assembly info.
 set_property(TARGET ${BINARY_NAME} PROPERTY VS_GLOBAL_GenerateAssemblyInfo "false")
+
+set_property(TARGET ${BINARY_NAME} PROPERTY VS_GLOBAL_ApplicationIcon "${CMAKE_CURRENT_SOURCE_DIR}/resources/app_icon.ico")
 
 # Apply the standard set of build settings. This can be removed for applications
 # that need different build settings.

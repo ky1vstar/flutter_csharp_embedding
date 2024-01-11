@@ -91,14 +91,14 @@ namespace Flutter.Embedding
       FlutterDesktopEngineReloadSystemFonts(Engine);
     } 
 
-    public FlutterDesktopPluginRegistrar GetRegistrarForPlugin(string pluginName)
+    public FlutterPluginRegistrar GetRegistrarForPlugin(string pluginName)
     {
       if (IsValid)
       {
-        return FlutterDesktopEngineGetPluginRegistrar(Engine, pluginName);
+        return new FlutterPluginRegistrar(FlutterDesktopEngineGetPluginRegistrar(Engine, pluginName));
       }
       Trace.TraceWarning("Cannot get plugin registrar on an engine that isn't running; call Run first.");
-      return new FlutterDesktopPluginRegistrar();
+      return null;
     }
 
     internal FlutterDesktopEngine RelinquishEngine() 

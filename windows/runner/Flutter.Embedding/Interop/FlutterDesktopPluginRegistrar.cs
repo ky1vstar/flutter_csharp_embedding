@@ -22,5 +22,45 @@ namespace Flutter.Embedding
       SetHandle(IntPtr.Zero);
       return true;
     }
+
+    internal class Marshaler : ICustomMarshaler
+    {
+      private static readonly Marshaler _instance = new Marshaler();
+
+      public void CleanUpManagedData(object ManagedObj)
+      {
+      }
+
+      public void CleanUpNativeData(IntPtr pNativeData)
+      {
+      }
+
+      public int GetNativeDataSize()
+      {
+        return IntPtr.Size;
+      }
+
+      public IntPtr MarshalManagedToNative(object ManagedObj)
+      {
+        if (ManagedObj is FlutterDesktopPluginRegistrar messenger)
+        {
+          return messenger.handle;
+        }
+        return IntPtr.Zero;
+      }
+
+      public object MarshalNativeToManaged(IntPtr pNativeData)
+      {
+        return new FlutterDesktopPluginRegistrar()
+        {
+          handle = pNativeData
+        };
+      }
+
+      public static ICustomMarshaler GetInstance(string s)
+      {
+        return _instance;
+      }
+    }
   }
 }

@@ -12,6 +12,6 @@ namespace Flutter.Embedding
     /// Returns the plugin registrar handle for the plugin with the given name.
     /// The name must be unique across the application.
     /// </summary>
-    FlutterDesktopPluginRegistrar GetRegistrarForPlugin(string pluginName);
+    FlutterPluginRegistrar GetRegistrarForPlugin(string pluginName);
   }
 }
